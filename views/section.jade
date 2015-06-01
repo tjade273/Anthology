@@ -1,0 +1,21 @@
+include header.html
+mixin story(name,file)
+  h3= name
+  div!=file
+    
+div(align="center",class="jumbotron")
+  h1 Simple
+  p "Everything should be made as simple as possible, but not simpler."
+  p -Albert Einstein
+
+div#accordion
+  each val, index in stories
+    +story(index,val)
+      
+script.
+  $("#accordion").accordion();
+  
+|</body>
+|</html>
+      
+      
