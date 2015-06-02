@@ -10,7 +10,7 @@ function readFiles(files){
   files.forEach(function(file){
     text.push(readFile(path.join(dir,file),'utf8'))
   })
-  return q.all([files,q.all(text)])
+  return text
 }
 
 function combine(arr1,arr2){
@@ -21,9 +21,11 @@ function combine(arr1,arr2){
   }
   return obj
 }
+function concat(arr1,arr2){
+  return arr1+arr2
+}
+//REMINDER: call concat after returning q.all(text), then spread
 readdir(dir)
   .then(readFiles,console.error)
-  .then(function(arr){
-    console.log(arr)
-    return arr.spread(combine,console.error)
-  }).then(console.log,console.error);
+  .then(q.all)
+  .
