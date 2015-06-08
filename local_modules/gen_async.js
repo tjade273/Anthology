@@ -1,9 +1,9 @@
 var fs = require('fs');
 var async = require('async')
 var path = require('path')
-var fileObj ={}
 module.exports = function(directory,call){
   var dir = path.normalize(directory)
+  var fileObj ={}
 function readFiles(mainCallback){
   async.forEachOf(fileObj,function(item,key,callback){
     fs.readFile(item,'utf8',function(err,file){

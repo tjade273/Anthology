@@ -3,43 +3,31 @@ extends layout
 block content
   .jumbotron(align='center')
     h1 &quot;Hello, world!&quot;
-      | &#x9;
+      
       h3 A Personal Anthology by Tjaden Hess
-    .container
-      h2.lead Preface
-      | &#x9;
-      hr
-      | &#x9;
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lectus justo. Quisque commodo ligula sed rhoncus dignissim. Ut bibendum est mi, non luctus est venenatis vitae. In hac habitasse platea dictumst. Morbi vitae velit lobortis lectus tempor placerat interdum et augue. Aenean bibendum in tellus a lacinia. In egestas pellentesque nisl, sit amet lobortis purus malesuada at. Vivamus viverra libero in auctor porta. Praesent quis magna nunc. Integer consectetur consequat quam blandit efficitur. Curabitur at convallis urna, fringilla imperdiet magna. Nulla quis imperdiet massa, non pellentesque elit. Sed ipsum dui, iaculis et leo vel, lacinia commodo tortor.
-      | &#x9;
-      p
-        | Nulla id rutrum turpis. Duis sapien ipsum, maximus ac convallis vitae, tempus ac diam. Vestibulum volutpat augue nec pellentesque facilisis. Nullam suscipit felis id tincidunt sodales. Vivamus ac fringilla nisi. Donec vel porttitor ante, ac eleifend quam. In tristique ante eget massa consequat, ac egestas urna elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis porttitor nisl sit amet magna congue, non vestibulum eros egestas. Proin ut luctus augue. Duis sollicitudin volutpat orci, nec egestas quam ornare eget. Ut a posuere tellus. Sed gravida nunc vel ante eleifend eleifend. Morbi vel finibus mauris. Praesent quis dui lorem. Cras ac massa enim.
-      | &#x9;
-      p
-        | Nulla facilisi. Nulla sit amet arcu eu nibh ornare rutrum. Integer malesuada magna quis lacus tristique aliquam. Mauris consectetur placerat turpis id ultricies. Donec diam augue, aliquet vitae efficitur vitae, aliquam non libero. Phasellus efficitur ultrices sagittis. Proin tempor commodo varius. Donec dapibus lobortis suscipit.
-      | &#x9;
-      p
-        | Duis eu neque nec dui tempus tempus. Praesent augue massa, fringilla sollicitudin sodales ac, malesuada sagittis lectus. Quisque fermentum odio eu quam eleifend, in iaculis augue interdum. Donec in magna nec turpis commodo suscipit. Suspendisse et eleifend justo, sit amet auctor sem. Sed eget dapibus nisl, eget pretium dui. Maecenas vehicula iaculis ipsum in aliquet. Donec fermentum vehicula rutrum.
-      | &#x9;
-      p
-        | Fusce tortor sapien, laoreet non urna a, bibendum posuere turpis. Morbi interdum lectus vel cursus eleifend. Maecenas eget porttitor quam. Nam ut justo at massa porttitor aliquam. Fusce erat purus, ullamcorper auctor fermentum ac, aliquam in leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sollicitudin molestie lacus, ut eleifend purus porttitor nec. Mauris augue risus, aliquet ac aliquet id, lacinia hendrerit nibh. Nullam iaculis enim ut mauris volutpat, vel aliquam arcu ultrices. Sed sed velit sit amet dolor porta efficitur. Ut lacinia felis nisl, et suscipit ipsum tincidunt non. Sed gravida massa ut orci tincidunt tristique. Curabitur pharetra leo nisl, eget fermentum mi porta ut. Praesent tempus rutrum enim. Sed leo diam, interdum ut consectetur id, faucibus ut elit.
+  .container.preface
+    h2.lead Preface
     hr
-    .row
-      .col-md-2
-      | &#x9;
-      .col-xs-4.col-md-2
-        a(href='#')
-          img.img-responsive.img-circle(src='images/rsz_simple.jpg', alt='Simple')
-      | &#x9;
-      .col-xs-4.col-md-2
-        a(href='#')
-          img.img-responsive.img-circle(src='images/rsz_elegant.jpg')
-      | &#x9;
-      .col-xs-4.col-md-2
-        a(href='#')
-          img.img-responsive.img-circle(src='images/powerful.jpg')
-      | &#x9;
-      .col-xs-4.col-md-2
-        a(href='#')
-          img.img-responsive.img-circle(src='images/rsz_precise.jpg')
+    p.
+      My first memories of a computer are of a hulking beast of a machine; it was a glowing, turquoise object of infinite wonder and possibility and I was drawn to it like a moth to a lamp. The only game I played was a cute little program in which I controlled a virtual robot in a virtual room by way of a simple scripting language that consisted of a series of commands, such as “Move forward,” “Turn left,” “Place block,” et cetera. Although I couldn’t have known it at the time, even such a trivially simple language is powerful enough to not only emulate the behavior of any other computer language, but is sufficient to express any possible computation and thus even human thought. My awe of the immense power of mechanized computation stayed with me through elementary school until eventually the availability of learning resources caught up to my voracious appetite for knowledge and, with the help of various online tools, I proudly completed my first real computer program, a command-line “skiing” game in which the player (displayed as the letter “V”) avoids trees (represented by “T”). I named the program “Skiing in June” and proudly presented it to my father as a Father’s Day gift. Looking back at the haphazard and disorganized code, I honestly have no idea how the program works or how I managed to successfully piece it together but I remember being amazed as all at once, after days of tweaking, debugging, and rewriting, the program compiled and ran. With a bit more experience I came to recognize the importance and beauty of good code, and how in many ways elegant code is like good poetry or prose: readability, aesthetics, simplicity, and efficiency are all key to making programs that are fast, maintainable and reusable. These heuristics coincide with those of a style guide whose advice I admire and (often futilely) attempt to adopt, The Elements of Style by William Strunk and E. B. White. With this in mind I decided to use these concepts as a theme for my Anthology, the goal being to celebrate the elegance through simplicity that great literature demonstrates. 
+
+    p.
+      Computer code is not just a static string of text to be admired and critiqued, however. I wanted to embrace the power of computers and so the logical extension a code-themed anthology was to create a dynamic, interactive anthology. The most practical way to implement such an interactive experience was to create a website, so that anyone in the world could view my anthology from any internet-connected device. As I began to contemplate how I would execute a feat so ambitious, I realized that an integral part of the benefits of internet and connectivity is that people from around the world could collaborate and work together in a manner not available through traditional means. To better facilitate this interaction, I decided to add yet another component to the anthology and include a form that allows users of the site to submit works that they feel exemplify great American literature. One thing led to another, and after spending more time at once in my room than I ever have before, I clicked the submit button and on the next tab over, the test message appeared in all its glory: “Hello, world!” A simple message, but one packed with history and meaning. 
+
+    p.
+      The phrase “hello, world” originated in Dennis Ritchie and Brian Kernighan’s The C Programming Language as a simple exercise to learn the syntax of the printf statement and ensure that the system was set up correctly. The evocative power of the simple statement caused it to be rapidly adopted by authors and teachers; after all, what could be more encouraging to a beginning programmer than causing their computer to seemingly come to life. “Hello, world” is evocative of new beginnings and promise, and after hours of streams of errors, crashes, mysteriously garbled output and cycle upon cycle of write-run-debug, is possibly the most encouraging phrase that can be printed to a computer terminal. The power of this statement is the reason that I chose it as my title, and I feel that it embodies the qualities of good code and literature.
+      
+    p.
+      Regarding the organization and design of my anthology. I intended the design to be minimalistic, yet easily navigable, as good code and literature should both be. The anthology is divided into four categories: Simple, Elegant, Powerful, and Precise. These represent what I feel is the essence of the ties between good literature and good code. Each section is headed by a quote from an influential figure about the theme; Reuse is a fundamental principle of programming and so I felt that since great figures had already eloquently stated my thoughts, why restate them? Because all of the works that I had chosen were fixtures of great American literature, the hardest part about choosing which works to place in each category was moving past the temptation to put all of the works in every category. Because I felt that 23 works of literature could never even approach the breadth of our literary heritage, I decided that it was fitting that one of the sections should be titled Collaborative and encompass all of the user-submitted works. Because I have neither the time nor will to moderate this section, I decided that the safest course was to enable Google sign-ins --no trivial task-- and only allow users with auhsdschools.org accounts to edit. Posts are credited to the contributor's full name to provide full accountability. 
+      
+    p.
+      This project tested my coding skills, as well as my perseverance, more than any project that I had previously embarked upon, and the process mirrored the process of writing literature remarkably closely. At each stage the process went roughly as follows: First I would plan out the functionality that I needed to achieve, the style and flow of the code, and the way in which it would interact with the rest of the program. I would then write the first draft of the code, which would inevitably fail to compile due to some spelling error or, even worse, a misplaced parenthesis or bracket. After a few rounds of spell checking and tracing down strange errors, I would enter by far the hardest stage; the program compiles and runs without errors but no output or unintelligible output is produced. Diagnosing this requires going through the program with a fine-toothed comb and inserting carefully placed “console.log( )” statements in order to produce some sort of output that can be used to see inside of the program as it is running. Next came stress-testing. The goal of this stage is to break the program by giving it inputs outside the normal or expected range. This means submitting a 30,000 character title or an email address full of special characters like quotation marks or backslashes. Since I don’t expect that there will be many attempts to take down my server, I limited my patches to vulnerabilities that would allow someone to make changes to the site anonymously or gain access to my physical computer. Given more time, my priority would be to make the site more robust, as well as mobile-friendly.
+    p.
+      The repeated cycles of planning, writing, editing, and stress-testing are isomorphic to the process that I use when writing; I plan my argument, then write a draft, spell check and edit for mechanical errors, troubleshoot the argument by streamlining evidence or adding analysis, and then attempt to eliminate any ambiguity, wordiness, or anything that could harm the resilience of the argument.  The intertwined meaning of content and form, and the strange level crossing that ensues is of particular interest to me. One of the most influential authors in my life is Douglas Hofstadter, author of Gödel, Escher, Bach: An Eternal Golden Braid, and it is he who initiated my interest in what he calls “strange loops,” which are level-crossing structures that intertwine form and content and have led to some of the most profound revelations in modern mathematics and philosophy. As a tribute to Professor Hofstadter, I have included as my 23rd work an excerpt from his magnum opus that prominently features such strange loops. This excerpt also serves as the inaugural entry in the Collaborative section of my anthology. 
+    p.
+      Continuing the theme of self-reference, I am also compiling an anthology of the source code that makes up the website. In the spirit of the Open Source movement, I have pushed the code to a repository on <a href=https://www.github.com/tjade273/Anthology>Github</a>. I also, however, am turning in a bound paper booklet of all of the source code, thus creating another level of self-reference. The booklet contains the code that replaced the actual anthology, yet in a way the code, and thus the book is the anthology. 
+    p.
+      This project has proven to be by far the most involved, difficult, and time-consuming of my entire school career. By my calculations I spent over 30 hours staring at my computer screen, and countless more thinking about how I would solve the innumerable bugs that arose. I like to think that the process allowed me to better understand F. Scott Fitzgerald as he painstakingly wrote The Great Gatsby, although of course I wouldn’t presume my work to be of the same caliber. Although I am not entirely satisfied with the outcome of my endeavor and will certainly continue to improve the anthology in the near future, I am proud of what I have accomplished in such a limited time frame and hope that the amount of work and love that went into this project will be appreciated.
+    p(align="righ") Word Count: 1615
+  hr
+  +pics()

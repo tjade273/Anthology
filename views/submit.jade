@@ -1,0 +1,86 @@
+extends layout 
+block content
+  script.
+    $(document).ready(function(){
+      console.log("hiding...")
+      $('#sub').hide();
+      $('#signout').hide();
+      if(!serv_errors){
+      $('#errors').empty()
+      }
+    })
+    function onSignIn(user){
+      console.log("test2")
+      var id_token = user.getAuthResponse().id_token;
+      var profile = user.getBasicProfile();
+      var domain = profile.getEmail().split("@")[1]
+      if(domain=="auhsdschools.org"){
+        $('#signin').hide()
+        $('#signout').show()
+        console.log(domain)
+        $('#token').val(id_token)
+        console.log("showing...")
+        $('#sub').show()
+        $('#sie').remove()
+    }
+      else{
+      var message = "<li id='sie'>Please sign in with an <em>auhsdschools.org</em> account</li>"
+        signOut();
+        var select = $('em:contains("auhsdschools.org")')
+        console.log(select)
+        if (select.length===0){
+          $('#errors').append(message)
+          }
+      }
+    }
+    function signOut() {
+      console.log('signing out...')
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+        $('#signin').show()
+        $('#signout').hide()
+        $('#sub').hide()
+      });
+    }
+  div(align="center", class="jumbotron")
+    h2 Contribute to the Anthology
+  
+    .row.rulerow
+      .col-md-4.col-xs-2
+      .col-md-4.col-xs-8
+        .container.rulebox(align="center")
+          h3 Rules:
+      .col-md-4.col-xs-2
+    
+  .row#editrow
+    .col-md-3
+    .col-md-6.col-xs-12
+      ul#errors
+        each val in serv_errors
+          li=val
+      form(action="/submit", method="POST")
+        .form-group
+          label(for="title") Title:  
+          input#title.form-control(type="text", name="title")
+      
+        .form-group
+          label(for="author") Author:  
+          input#author.form-control(type="text", name="author")
+        input#token(type="hidden",name="token")
+      
+        textarea.form-control#editor1(rows="10",cols="50",name="editor1")
+        br
+        .form-group.form-horizontal
+          label(for="cite") Citation:
+          textarea#cite.form-control(name="cite")
+        input#sub.btn.btn-primary(type="submit") 
+      
+      script CKEDITOR.replace('editor1')
+      .signinout  
+        .g-signin2#signin(data-onsuccess="onSignIn",data-theme="dark",data-longtitle="true",data-width="200px")
+        button.btn.btn-danger#signout(onclick='signOut()') Sign out
+        
+    .col-md-3
+  
+    

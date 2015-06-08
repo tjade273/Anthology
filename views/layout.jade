@@ -2,26 +2,27 @@ doctype html
 html
   head
     title Personal Anthology
-    | &#x9;
+    
     link(rel='stylesheet', href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css')
-    | &#x9;
+    
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
-    | &#x9;
-    link(href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/sandstone/bootstrap.min.css', rel='stylesheet')
-    | &#x9;
-    link(href='main.css', rel='stylesheet')
-    | &#x9;
+    
+    link(href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/darkly/bootstrap.min.css", rel="stylesheet")
+      
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    
     link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
-    | &#x9;
+    
     link(rel='icon', href='/favicon.ico', type='image/x-icon')
     // Latest compiled and minified JavaScript
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    | &#x9;
     script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js')
-    | &#x9;
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' )
+    script(src="http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js" async defer)
+    script(src="https://apis.google.com/js/platform.js" async defer)
+    meta(name="google-signin-client_id" content="303220019686-410qmuvhcktna11rvntufkthccvcv5t4.apps.googleusercontent.com")
   body
-    nav.navbar.navbar-default
+    nav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
         // Brand and toggle get grouped for better mobile display
         .navbar-header
@@ -34,74 +35,46 @@ html
             |         
             span.icon-bar
           |       
-          a.navbar-brand(href='#')
+          a.navbar-brand(href='/')
             span.glyphicon.glyphicon-book
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
             li
-              a(href='#')
-                | Simple 
-                span.sr-only (current)
-            |         
+              a(href='/simple') Simple 
+                span.sr-only (current)        
             li
-              a(href='#') Elegant
-            | &#x9;&#x9;
+              a(href='/elegant') Elegant
             li
-              a(href='#') Powerful
-            | &#x9;&#x9;
+              a(href='/powerful') Powerful
             li
-              a(href='#') Precise
-            |         
-            li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-                | Dropdown 
-                span.caret
-              |           
-              ul.dropdown-menu(role='menu')
-                li
-                  a(href='#') Action
-                |             
-                li
-                  a(href='#') Another action
-                |             
-                li
-                  a(href='#') Something else here
-                |             
-                li.divider
-                |             
-                li
-                  a(href='#') Separated link
-                |             
-                li.divider
-                |             
-                li
-                  a(href='#') One more separated link
-          |       
+              a(href='/precise') Precise
+            li
+              a(href='/collaborative') Collaborative    
           ul.nav.navbar-nav.navbar-right
             li
-              a(href='#') Link
+              a(href='/submit') Contribute
             |         
             li.dropdown
               a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-                | Dropdown 
+                | About 
                 span.caret
               |           
               ul.dropdown-menu(role='menu')
                 li
-                  a(href='#') Action
-                |             
+                  a(href='./acknowledge') Acknowledgements
+                             
                 li
-                  a(href='#') Another action
-                |             
+                  a(href='/table') Table of Contents
+                             
                 li
-                  a(href='#') Something else here
-                |             
+                  a(href='/cites') Citations
+                            
                 li.divider
-                |             
+                             
                 li
-                  a(href='#') Separated link
-          | &#x9;  
+                  a(href='https://www.github.com/tjade273/anthology') Source Code
+            
           form.navbar-form.navbar-right(role='search', action='#')
             .form-group
               input.form-control(type='text', placeholder='Search')
@@ -109,4 +82,23 @@ html
             button(type='submit', style='position: absolute; visibility: hidden') Submit
         // /.navbar-collapse
       // /.container-fluid
-      block content
+    
+    mixin pics()  
+      .row
+        .col-md-2.col-xs-4
+        
+        .col-xs-4.col-md-2
+          a(href='/simple')
+            img.img-responsive.img-circle(src='images/rsz_simple.jpg', alt='Simple')
+        
+        .col-xs-4.col-md-2
+          a(href='/elegant')
+            img.img-responsive.img-circle(src='images/rsz_elegant.jpg')
+        .col-xs-4.col-md-2
+          a(href='/powerful')
+            img.img-responsive.img-circle(src='images/powerful.jpg')
+        .col-xs-4.col-md-2
+          a(href='/precise')
+            img.img-responsive.img-circle(src='images/rsz_precise.jpg')
+        .col-md-2.col-xs-4
+    block content

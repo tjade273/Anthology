@@ -1,21 +1,31 @@
-include header.html
-mixin story(name,file)
-  h3= name
-  div!=file
-    
-div(align="center",class="jumbotron")
-  h1 Simple
-  p "Everything should be made as simple as possible, but not simpler."
-  p -Albert Einstein
-
-div#accordion
-  each val, index in stories
-    +story(index,val)
-      
-script.
-  $("#accordion").accordion();
+extends layout
+block content
+  include quotes
+  mixin story(name,file)
+    - var norm = name.split(' ')[0]+name[name.length-1]
+    div(class="panel-heading",role="tab", id="heading_#{norm}")
+      h1(class="panel-title")
+        a(data-toggle="collapse" data-parent="#accordion" href="##{norm}" aria-expanded="true" aria-controls="#{norm}")!= "<h3>"+name.replace(/_/g," ")+"</h3>"
+      div(id="#{norm}", class="panel-collapse collapse" role="tabpanel" aria-labelledby="#heading_#{norm}")
+        div(class="panel-body")!=file
   
-|</body>
-|</html>
-      
+  if title == "Collaborative"
+    div(align="center",class="jumbotron",style="padding-bottom:20px")
+      h1=title
+      p= quote[title]
+      p!= "--"+sources[title]
+  else
+    div(align="center",class="jumbotron")
+      h1=title
+      p= quote[title]
+      p!= "--"+sources[title]
+  
+  div(align = "center", class="panel-group" id="accordion" role="tablist" aria-multiselectable="true")
+    div(class="panel panel-default")
+      each val, index in stories
+        +story(index,val)
+  +pics()    
+
+  
+
       
