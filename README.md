@@ -1,9 +1,3 @@
-#IAN SUCKS
-##DICK
-###:)
+#Tjaden Hess's Personal Anthology
 ---
----
----
----
----
-:)
+##Please dont laugh...
