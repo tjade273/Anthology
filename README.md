@@ -1,3 +1,3 @@
 #Tjaden Hess's Personal Anthology
 ---
-##Please don't laugh...
+This repo is strictly for testing purposes. Actual server may not be using this codebase.
