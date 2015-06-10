@@ -28,7 +28,7 @@ block content
         signOut();
         var select = $('em:contains("auhsdschools.org")')
         console.log(select)
-        if (select.length===0){
+        if (select.length<2){
           $('#errors').append(message)
           }
       }
@@ -51,6 +51,12 @@ block content
       .col-md-4.col-xs-8
         .container.rulebox(align="center")
           h3 Rules:
+          ul(align="left") 
+            li Don't post anything inappropriate or offensive
+            li Properly cite all sources
+            li Please keep the passages short
+            li Only <em>auhsdschools.org</em> accounts can post
+            li Use  only alphanumeric characters and spaces for titles
       .col-md-4.col-xs-2
     
   .row#editrow
@@ -73,10 +79,10 @@ block content
         br
         .form-group.form-horizontal
           label(for="cite") Citation:
-          textarea#cite.form-control(name="cite")
+          textarea#cite.form-control(name="cite",rows="3")
         input#sub.btn.btn-primary(type="submit") 
       
-      script CKEDITOR.replace('editor1')
+      script CKEDITOR.replace('editor1'); 
       .signinout  
         .g-signin2#signin(data-onsuccess="onSignIn",data-theme="dark",data-longtitle="true",data-width="200px")
         button.btn.btn-danger#signout(onclick='signOut()') Sign out
