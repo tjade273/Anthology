@@ -3,6 +3,7 @@ var async = require('async')
 var path = require('path')
 module.exports = function(directory,call){
   var dir = path.normalize(directory)
+  console.log(dir)
   var fileObj ={}
 function readFiles(mainCallback){
   async.forEachOf(fileObj,function(item,key,callback){
